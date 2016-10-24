@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+ 
 /**
  * This method will be called on page render.
  * @param env {{request: org.wso2.carbon.uuf.spi.HttpRequest,response: org.wso2.carbon.uuf.spi.HttpResponse,
@@ -25,5 +25,5 @@
  * @returns {Object.<string, Object>} View Model for Handlebars
  */
 function onRequest(env) {
-    return {"helloMessage": "hello world...!!!"};
+    return {};
 }
