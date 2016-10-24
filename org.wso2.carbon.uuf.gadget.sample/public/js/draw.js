@@ -57,6 +57,9 @@ var config = {
 
 }
 
+//$("#foo").html("Hey there !");
 //draw a bar chart on div #bar
-igviz.plot("#bar",config,dataTable);
+igviz.plot("#bar", config, dataTable);
+
+
 })();
