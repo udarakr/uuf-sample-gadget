@@ -25,41 +25,48 @@ var dataTable = {
   ]
 }
 
-var width = document.getElementById("bar").offsetWidth; //canvas width
-var height = 270;   //canvas height
+rendergadget(dataTable);
 
-var config = {
-    "title": "Area By Country",
-    "yAxis": 1,
-    "xAxis": 0,
-    "pointLabel": 0,
-    "width": width,
-    "height": height,
-    "padding": 60,
-    "chartType": "bar",
-    "tickLabelConfig":{
-        "textAngle":-60,
-        "x":0,
-        "y":9,
-        "dy":".15em",
-        "dx":"-.8em",
-        "tickHeight":6,
-        "tickWidth":0
-    },
-    "yAxisLabelConfig":{
-        "fontSize":"20px",
-        "rotate":-90,
-        "x":-10 ,
-        "y":6,
-        "dy":".71em",
-        "dx":0
+function rendergadget(dataTable){
+    var width = document.getElementById("bar").offsetWidth; //canvas width
+    var height = 270;   //canvas height
+
+    var config = {
+        "title": "Area By Country",
+        "yAxis": 1,
+        "xAxis": 0,
+        "pointLabel": 0,
+        "width": width,
+        "height": height,
+        "padding": 60,
+        "chartType": "bar",
+        "tickLabelConfig":{
+            "textAngle":-60,
+            "x":0,
+            "y":9,
+            "dy":".15em",
+            "dx":"-.8em",
+            "tickHeight":6,
+            "tickWidth":0
+        },
+        "yAxisLabelConfig":{
+            "fontSize":"20px",
+            "rotate":-90,
+            "x":-10 ,
+            "y":6,
+            "dy":".71em",
+            "dx":0
+        }
+
     }
-
+    //draw a bar chart on div #bar
+    igviz.plot("#bar", config, dataTable);  
 }
 
-//$("#foo").html("Hey there !");
-//draw a bar chart on div #bar
-igviz.plot("#bar", config, dataTable);
+
+$(window).resize(function() {
+  rendergadget(dataTable);
+});
 
 
 })();
